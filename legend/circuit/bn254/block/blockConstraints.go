@@ -150,7 +150,7 @@ func GetZeroTxConstraint() TxConstraints {
 	zeroTxConstraint.WithdrawNftTxInfo = std.EmptyWithdrawNftTxWitness()
 	zeroTxConstraint.FullExitTxInfo = std.EmptyFullExitTxWitness()
 	zeroTxConstraint.FullExitNftTxInfo = std.EmptyFullExitNftTxWitness()
-	zeroTxConstraint.Signature = EmptySignatureWitness()
+	zeroTxConstraint.Signature = std.EmptyEcdsaSignatureConstraints()
 	zeroTxConstraint.Nonce = 0
 	zeroTxConstraint.ExpiredAt = 0
 
@@ -192,7 +192,7 @@ func GetZeroTxConstraint() TxConstraints {
 		zeroAccountConstraint := std.AccountConstraints{
 			AccountIndex:    0,
 			AccountNameHash: 0,
-			AccountPk:       std.EmptyPublicKeyWitness(),
+			AccountPk:       std.EmptyEcdsaPkConstraints(),
 			Nonce:           0,
 			CollectionNonce: 0,
 			AssetRoot:       0,
