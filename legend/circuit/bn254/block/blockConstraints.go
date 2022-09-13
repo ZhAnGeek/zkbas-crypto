@@ -121,6 +121,7 @@ func SetBlockWitness(oBlock *Block) (witness BlockConstraints, err error) {
 	for i := 0; i < len(oBlock.Txs); i++ {
 		tx, err := SetTxWitness(oBlock.Txs[i])
 		witness.Txs = append(witness.Txs, tx)
+		witness.TxsCount++
 		if err != nil {
 			log.Println("[SetBlockWitness] unable to set tx witness: ", err.Error())
 			return witness, err
